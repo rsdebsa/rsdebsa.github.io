@@ -1,0 +1,263 @@
+﻿*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg1:#05080F; --bg2:#0A2942;
+  --text:#C0C0C0; --muted:#9EB6C8;
+  --accent:#4A90E2; --accent-2:#1C5BD6;
+  --glass:rgba(255,255,255,.06);
+  --glass-border:rgba(255,255,255,.08);
+}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background: radial-gradient(1200px 700px at 50% -10%, var(--bg2), var(--bg1) 60%);
+  color:var(--text); overflow-x:hidden;
+}
+
+/* NAV */
+.topnav{
+  position:fixed; inset:0 0 auto 0; height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 28px; z-index:1000;
+  background:rgba(10,20,30,.82); backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.brand{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--accent);font-size:1.2rem}
+.brand span {
+  color: #bcd4ff;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  filter: drop-shadow(0 2px 6px rgba(74,144,226,0.45));
+}
+
+/*.brand span {
+  color: #8fb9ff;
+  font-weight: 800;
+  text-shadow: 0 0 8px rgba(74,144,226,0.35);
+}*/
+
+
+/* ===== LOGO IN NAV ===== */
+.nav-logo {
+  width: 70px;
+  height: 70px;
+  margin-right: -9px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 6px rgba(74,144,226,0.45));
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.nav-links{list-style:none;display:flex;gap:22px}
+.nav-links a{color:var(--text);text-decoration:none;transition:color .25s}
+.nav-links a:hover{color:var(--accent)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;place-items:center;position:relative;text-align:center}
+.overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,15,.85),rgba(10,41,66,.95))}
+.glass{
+  background:var(--glass); border:1px solid var(--glass-border);
+  border-radius:20px; backdrop-filter:blur(12px);
+  box-shadow:0 0 30px rgba(0,0,0,.35);
+}
+.hero-content{position:relative;padding:56px 44px;animation:fadeIn 1.2s ease both}
+.logo{width:180px;margin-bottom:26px;filter:drop-shadow(0 0 12px rgba(74,144,226,.35))}
+.hero h1{font-family:'Montserrat',sans-serif;font-size:2.7rem;color:#fff}
+.hero h2{font-size:1.2rem;opacity:.88;margin-top:8px}
+.hero p{max-width:640px;margin:14px auto 0;color:#BFD3E3}
+.accent{color:var(--accent)}
+
+/* Socials (بزرگ‌نمایی + چرخش لطیف) */
+.socials{margin-top:18px;display:flex;justify-content:center;gap:18px}
+.socials .social{
+  width:46px;height:46px;border-radius:50%;
+  display:grid;place-items:center;text-decoration:none;
+  color:var(--text); background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
+  transition:transform .25s ease,color .25s ease, box-shadow .25s ease;
+}
+.socials .social i{font-size:1.25rem}
+.socials .social:hover{
+  color:#fff; transform:scale(1.2) rotate(6deg);
+  box-shadow:0 10px 24px rgba(74,144,226,.35), inset 0 0 20px rgba(74,144,226,.12);
+  background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05));
+}
+
+/* Sections */
+section{padding:96px 20px}
+h3{text-align:center;font-family:'Montserrat',sans-serif;font-size:2rem;color:#fff;margin-bottom:44px}
+
+/* ===== SKILLS ===== */
+.skills {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* عمودی وسط */
+  align-items: center;       /* افقی وسط */
+  text-align: center;
+}
+
+/* از گرید به فلکس تغییر دادیم برای وسط دقیق */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* تمام کارت‌ها وسط */
+  align-items: center;
+  gap: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card{
+  padding:22px; text-align:center; border-radius:16px;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  width:220px;
+}
+.card i{font-size:1.8rem;margin-bottom:10px}
+.card p{color:#E4E8EE;font-weight:600}
+.skills .card{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.08)}
+.skills .card:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 12px 28px rgba(74,144,226,.25);
+  background:rgba(255,255,255,.1);
+}
+
+/* ===== PROJECTS ===== */
+/* ===== PROJECTS (سه‌تایی وسط و همیشه در یک خط) ===== */
+.projects {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 26px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: nowrap; /* 🔥 دیگه نمی‌ذاره کارت سوم بیفته پایین */
+}
+
+.project-card {
+  flex: 0 0 32%; /* هر کارت حدود یک‌سوم عرض */
+    text-decoration:none;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 26px 22px 28px;
+  text-align: center;
+  transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+}
+
+.project-card:hover {
+      text-decoration: none;    /* حتی در حالت هاور هم نذاره زیرخط بیاد */
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 28px rgba(74, 144, 226, 0.25);
+}
+
+.project-card h4 {
+  font-size: 1.05rem;
+  color: var(--accent);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.project-card p {
+  color: #C8D2E0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* GitHub Badge */
+.gh-badge {
+  position: absolute;
+  left: 50%;
+  top: -18px;
+  transform: translate(-50%, -6px) scale(.95);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: #0E1621;
+  color: var(--accent);
+  border: 1px solid rgba(74,144,226,.25);
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(74,144,226,.22);
+  opacity: 0;
+  transition: opacity .28s ease, transform .28s ease, box-shadow .28s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.project-card:hover .gh-badge {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+  box-shadow: 0 12px 26px rgba(74,144,226,.32);
+}
+
+/* 📱 در موبایل اجازه بده بچسبن زیر هم */
+@media (max-width: 1024px) {
+  .projects-grid {
+    flex-wrap: wrap; /* در صفحه کوچک دوباره زیر هم برن */
+  }
+  .project-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* بج GitHub که با هاور ظاهر می‌شود */
+.gh-badge{
+  position:absolute; left:50%; top:-18px; transform:translate(-50%,-6px) scale(.95);
+  width:36px; height:36px; display:grid; place-items:center;
+  background:#0E1621; color:var(--accent); border:1px solid rgba(74,144,226,.25);
+  border-radius:999px; box-shadow:0 8px 20px rgba(74,144,226,.22);
+  opacity:0; transition:opacity .28s ease, transform .28s ease, box-shadow .28s ease;
+  pointer-events:none; z-index:2;
+}
+.project-card:hover .gh-badge{
+  opacity:1; transform:translate(-50%,0) scale(1);
+  box-shadow:0 12px 26px rgba(74,144,226,.32);
+}
+.project-card:hover{transform:translateY(-6px); box-shadow:0 12px 28px rgba(0,0,0,.35)}
+
+/* ===== CONTACT ===== */
+.contact{
+  max-width:880px; margin:0 auto 100px; padding:60px 40px;
+}
+.contact h3{text-align:left}
+.contact p{color:var(--muted);margin-bottom:18px}
+.contact-form{display:grid;gap:14px}
+.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-form input,.contact-form textarea{
+  width:100%; border:1px solid rgba(255,255,255,.12); border-radius:12px;
+  background:rgba(255,255,255,.08); color:#fff; padding:12px 14px; outline:none;
+  transition:border .2s, box-shadow .2s
+}
+.contact-form input:focus,.contact-form textarea:focus{
+  border-color:var(--accent); box-shadow:0 0 0 4px rgba(74,144,226,.18)
+}
+.button{
+  justify-self:end; height:44px; padding:0 22px; border-radius:12px; border:0;
+  background:var(--accent); color:#fff; font-weight:700; cursor:pointer;
+  box-shadow:0 10px 22px rgba(74,144,226,.28);
+  transition:transform .15s ease, background .25s ease, box-shadow .25s ease;
+}
+.button:hover{background:var(--accent-2); transform:translateY(-2px); box-shadow:0 14px 28px rgba(74,144,226,.36)}
+.note{margin-top:6px;color:#9fb0c2;font-size:.9rem}
+
+/* Responsive */
+@media (max-width:720px){
+  .contact-form .row{grid-template-columns:1fr}
+  .logo{width:150px}
+}
+
+/* Anim */
+@keyframes fadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}

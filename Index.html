@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Araz — Software Engineer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- NAV -->
+    <!-- 🔹 NAVIGATION -->
+    <nav class="topnav">
+        <div class="brand">
+            <img src="logo.png" alt="Araz Logo" class="nav-logo" />
+            <span>Amirreza Dabagh</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" data-scroll>Home</a></li>
+            <li><a href="#skills" data-scroll>Skills</a></li>
+            <li><a href="#projects" data-scroll>Projects</a></li>
+            <li><a href="#contact" data-scroll>Contact</a></li>
+        </ul>
+    </nav>
+    <!-- 🔹 HERO SECTION -->
+    <header id="home" class="hero">
+        <div class="hero-content glass">
+            <h1>Hi, I'm <span class="accent">Araz</span></h1>
+            <h2>Software Engineer & Backend Developer</h2>
+            <p>Turning complex ideas into clean, scalable backend systems.</p>
+            <div class="socials">
+                <a href="https://github.com/rsdebsa" class="social" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="resume.pdf#page=1" class="social" target="_blank"><i class="fa-solid fa-file-lines"></i></a>
+                <a href="mailto:rsdebsa@gmail.com" class="social"><i class="fa fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+        <h3>Skills</h3>
+        <div class="cards skills-grid">
+            <div class="card glass"><i class="fa-solid fa-code" style="color:#68217A"></i><p>C#</p></div>
+            <div class="card glass"><i class="fa-solid fa-layer-group" style="color:#512BD4"></i><p>.NET / .NET Core</p></div>
+            <div class="card glass"><i class="fa-brands fa-java" style="color:#E76F00"></i><p>Java</p></div>
+            <div class="card glass"><i class="fa-brands fa-python" style="color:#3776AB"></i><p>Python</p></div>
+            <div class="card glass"><i class="fa-solid fa-database" style="color:#00758F"></i><p>SQL Server</p></div>
+            <div class="card glass"><i class="fa-solid fa-database" style="color:#F29111"></i><p>MySQL</p></div>
+            <div class="card glass"><i class="fa-solid fa-network-wired" style="color:#1C5BD6"></i><p>REST APIs</p></div>
+            <div class="card glass"><i class="fa-solid fa-diagram-project" style="color:#4B8BF5"></i><p>Entity Framework</p></div>
+            <div class="card glass"><i class="fa-brands fa-git-alt" style="color:#F05032"></i><p>Git</p></div>
+            <div class="card glass"><i class="fa-solid fa-paper-plane" style="color:#EF5B25"></i><p>Postman</p></div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <h3>Projects</h3>
+        <div class="cards projects-grid">
+            <!-- User & Assets -->
+            <a href="https://github.com/rsdebsa/Users-Assets-Managment" target="_blank" class="card glass project-card">
+                <span class="gh-badge" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
+                <h4>User & Assets Management</h4>
+                <p>Windows Forms app in C# for managing users and devices with reporting & access control.</p>
+            </a>
+            <!-- Inventory Tracker -->
+            <a href="https://github.com/rsdebsa/InventoryTracker" target="_blank" class="card glass project-card">
+                <span class="gh-badge" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
+                <h4>Inventory Tracker</h4>
+                <p>.NET Core + SQL Server system for stock, products, and analytics dashboards.</p>
+            </a>
+            <!-- Real Estate -->
+            <a href="https://github.com/rsdebsa/RealEstate.Intro-Docs" target="_blank" class="card glass project-card">
+                <span class="gh-badge" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
+                <h4>Real Estate Management System</h4>
+                <p>.NET 8 Web API + SQL Server for agencies to manage properties, owners, and contracts.</p>
+            </a>
+        </div>
+    </section>
+    <!-- CONTACT -->
+    <footer id="contact" class="contact glass">
+        <h3>Contact</h3>
+        <p>Let’s connect and build something great together.</p>
+        <form id="contactForm" class="contact-form" autocomplete="on">
+            <div class="row">
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+                <input type="email" id="email" name="email" placeholder="Your email" required />
+            </div>
+            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+            <button type="submit" class="button">Send Message</button>
+            <p class="note">Your default email app will open with your message.</p>
+        </form>
+    </footer>
+    <!-- (اختیاری) اگر خواستی بعداً فایل جدا بساز: script.js -->
+    <script>
+    // Smooth scroll برای منو
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href'); if(id.length<2) return;
+        e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth'});
+      });
+    });
+
+    // ارسال ایمیل با mailto
+    document.getElementById("contactForm").addEventListener("submit", e=>{
+      e.preventDefault();
+      const name=document.getElementById("name").value.trim();
+      const email=document.getElementById("email").value.trim();
+      const msg=document.getElementById("message").value.trim();
+      const body=encodeURIComponent(`${msg}\n\nFrom: ${name} <${email}>`);
+      location.href=`mailto:rsdebsa@gmail.com?subject=${encodeURIComponent('Portfolio Contact')}&body=${body}`;
+    });
+    </script>
+</body>
+</html>
