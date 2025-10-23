@@ -288,7 +288,7 @@ h3{text-align:center;font-family:'Montserrat',sans-serif;font-size:2rem;color:#f
   aspect-ratio: 1 / 1;  /* همیشه مربع می‌مونه */
   object-fit: contain;  /* تناسب تصویر حفظ بشه */
   border-radius: 8px;   /* (اختیاری) گوشه نرم‌تر بشه */
-  margin-right: 1;   /* فاصله از اسم */
+  margin-right: 3;   /* فاصله از اسم */
 }
 
   .brand span {
