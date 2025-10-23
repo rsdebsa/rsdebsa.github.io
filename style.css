@@ -284,7 +284,8 @@ h3{text-align:center;font-family:'Montserrat',sans-serif;font-size:2rem;color:#f
     margin-bottom: 8px;
   }
   .brand img {
-    width: 38px;
+    width: 70px;
+    height: 70px;
     margin-right: 6px;
   }
   .brand span {
