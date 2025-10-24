@@ -277,20 +277,18 @@ h3{text-align:center;font-family:'Montserrat',sans-serif;font-size:2rem;color:#f
     height: auto;
     padding: 10px 0;
   }
-  .brand {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-.brand img {
-  width: 150px;          /* اندازه کنترل‌شده */
-  aspect-ratio: 1 / 1;  /* همیشه مربع می‌مونه */
-  object-fit: contain;  /* تناسب تصویر حفظ بشه */
-  border-radius: 8px;   /* (اختیاری) گوشه نرم‌تر بشه */
-  margin-right: 20;   /* فاصله از اسم */
+.brand {
+  display: flex;
+  align-items: center;      /* عمودی وسط */
+  justify-content: flex-start; /* از چپ به ترتیب بچینه */
 }
 
+.brand img {
+  width: 55px;              /* سایز فعلی خوبه */
+  aspect-ratio: 1 / 1;      /* همیشه مربع */
+  object-fit: contain;
+  margin-right: -3px;       /* فاصله‌ی واقعی از اسم */
+}
   .brand span {
     font-size: 1.1rem;
   }
