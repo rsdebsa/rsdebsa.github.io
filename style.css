@@ -284,11 +284,11 @@ h3{text-align:center;font-family:'Montserrat',sans-serif;font-size:2rem;color:#f
     margin-bottom: 8px;
   }
 .brand img {
-  width: 120px;          /* اندازه کنترل‌شده */
+  width: 150px;          /* اندازه کنترل‌شده */
   aspect-ratio: 1 / 1;  /* همیشه مربع می‌مونه */
   object-fit: contain;  /* تناسب تصویر حفظ بشه */
   border-radius: 8px;   /* (اختیاری) گوشه نرم‌تر بشه */
-  margin-right: 10;   /* فاصله از اسم */
+  margin-right: 20;   /* فاصله از اسم */
 }
 
   .brand span {
